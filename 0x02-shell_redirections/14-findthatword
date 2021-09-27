@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -v linuxtechi /etc/passwd
+grep -d root /etc/passwd
