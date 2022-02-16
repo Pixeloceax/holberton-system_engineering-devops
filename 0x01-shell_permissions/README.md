@@ -1,1 +1,1 @@
-skuu skuu
+## 0x01 shell permissions
