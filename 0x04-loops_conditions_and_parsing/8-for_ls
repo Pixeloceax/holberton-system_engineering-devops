@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# comment
 file=0
 ls=$(ls)
 for file in $ls
