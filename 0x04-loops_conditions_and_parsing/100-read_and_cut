@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # comment
-file=0
-passwd=$(cat /etc/passwd)
-for file in $passwd
-do
-    echo "$file" | cut -d ":" -f1,4,7
-done
+while read -r read; do
+	echo "$read" | cut -d ":" -f1,4,7
+done </etc/passwd
