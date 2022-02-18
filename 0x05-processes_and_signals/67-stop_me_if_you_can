@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#comment
+kill -s 15 $(pgrep -f ./7-highlander)

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#comment
+sudo touch /var/run/myscript.pid
+sudo bash -C "echo $$ >>  /var/run/myscript.pid"
