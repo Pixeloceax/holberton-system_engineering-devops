@@ -1,3 +1,4 @@
+# comment
 file{'comment':
     path    => '/tmp/school',
     mode    => '0744',
