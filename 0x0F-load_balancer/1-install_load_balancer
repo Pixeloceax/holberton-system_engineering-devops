@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#install load balancer
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
+sudo service  start
