@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#configure 2nd server
-
+# configure 2nd server
 apt update -y
 apt install nginx -y
 sed -i "/listen \[::\]:80 default_server;/a\add_header X-Served-By $(hostname);" /etc/nginx/sites-available/default
