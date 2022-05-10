@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Run Nginx as Nginx
+service nginx reload
+service nginx restart
