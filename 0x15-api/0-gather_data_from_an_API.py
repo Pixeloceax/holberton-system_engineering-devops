@@ -9,7 +9,7 @@ from urllib import response
 
 if __name__ == "__main__":
 
-    if len(argv) > 1:
+    
         response = requests.get(
             "https://jsonplaceholder.typicode.com/users/{}".format(
                 argv[1]
