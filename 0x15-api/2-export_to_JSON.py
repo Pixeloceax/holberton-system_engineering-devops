@@ -10,14 +10,14 @@ from urllib import response
 
 if __name__ == "__main__":
 
-    if len(argv) > 1:
         User = response = requests.get(
             "https://jsonplaceholder.typicode.com/users/{}".format(
                 argv[1]
                 )
             )
-        response = requests.get("https://jsonplaceholder.typicode.com/todos")
-        todos = (response.json())
+        todos = response = requests.get(
+            "https://jsonplaceholder.typicode.com/todos"
+            ).json()
 
         file = argv[1] + ".json"
         user = {}
