@@ -2,9 +2,10 @@
 """
 Gather data from an API
 """
-from urllib import response
 import requests
 from sys import argv
+from urllib import response
+
 
 if __name__ == "__main__":
 

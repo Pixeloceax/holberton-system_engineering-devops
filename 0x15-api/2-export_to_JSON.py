@@ -2,10 +2,11 @@
 """
 Gather data from an API
 """
-from urllib import response
+import json
 import requests
 from sys import argv
-import json
+from urllib import response
+
 
 if __name__ == "__main__":
 
