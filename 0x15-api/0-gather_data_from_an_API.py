@@ -3,27 +3,39 @@
 Gather data from an API
 """
 import requests
-import sys
+from sys import argv
+from urllib import response
+
 
 if __name__ == "__main__":
-    id = sys.argv[1]
-    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
 
-    user = requests.get(user_url).json()
-    TODO = requests.get(todo_url).json()
+    if len(argv) > 1:
+        response = requests.get(
+            "https://jsonplaceholder.typicode.com/users/{}".format(
+                argv[1]
+                )
+            )
+        User = (response.json())
+        response = requests.get(
+            "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+                argv[1]
+            )
+        )
+        todos = (response.json())
 
-    number_done = 0
-    total = 0
-    task_done = []
+        number_done = 0
+        total = 0
+        task_done = []
 
-    for task in TODO:
-        total += 1
-        if task.get("completed") is True:
-            number_done += 1
-            task_done.append(task.get("title"))
+        for task in todos:
+            total += 1
+            if task.get("completed") is True:
+                number_done += 1
+                task_done.append(task.get("title"))
 
-    sentence = "Employee {} is done with tasks({}/{}):"
-    print(sentence.format(user.get("name"), number_done, total))
-    for task in task_done:
-        print("\t {}".format(task))
+        print(
+            "Employee {} is done with tasks({}/{}):".format(
+                User.get("name"), number_done, total)
+            )
+        for task in task_done:
+            print("\t {}".format(task))
