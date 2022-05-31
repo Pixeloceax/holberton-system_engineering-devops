@@ -31,14 +31,12 @@ def recurse(subreddit, hot_list=[], after=None):
         headers={'User-Agent': 'Holberton'},
         params={'after': after}
     )
-
+    if response.status_code == 404:
+        return None
     data = response.json()["data"]
 
-    if response.status_code == 404 or data["after"] is None:
-        if len(hot_list) == 0:
-            return None
-
-        return hot_list
+    hot_list = add_value(hot_list, data)
+    if data['after'] is not None:
+        return recurse(subreddit, hot_list, data['after'])
     else:
-        hot_list = add_value(hot_list, data)
-        return recurse(subreddit, hot_list, data["after"])
+        return hot_list
