@@ -19,4 +19,4 @@ def top_ten(subreddit):
                   ('data').get('children')
                   [post].get('data').get('title'))
     else:
-        return(None)
+        print (None)
